@@ -7,7 +7,7 @@ interface JokesRemoteDataSource {
     suspend fun getRandomJoke() : DataJoke
 }
 
-class JokesRemoteDataSourceImp(private val service: JokesApiService) : JokesRemoteDataSource {
+class JokesApiDataSource(private val service: JokesApiService) : JokesRemoteDataSource {
 
     override suspend fun getRandomJoke(): DataJoke {
         return service.getRandomJoke()

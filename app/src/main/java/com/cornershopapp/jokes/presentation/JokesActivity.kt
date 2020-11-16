@@ -22,9 +22,9 @@ class JokesActivity : BaseActivity<ActivityJokesBinding>() {
     private fun observeStates() {
         viewModel.stateLiveData.observe(this) {
             when(it) {
-                is JokesState.Loading -> setLoading()
-                is JokesState.Loaded -> setLoaded(it.content)
-                is JokesState.Error -> setError(it.message)
+                is Loading -> setLoading()
+                is Loaded -> setLoaded(it.content)
+                is Error -> setError(it.message)
             }
         }
     }
